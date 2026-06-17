@@ -1,0 +1,199 @@
+.footer {
+  background: #1a1f2e;
+  color: #aaa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+}
+
+/* Asosiy Grid tizimi */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Brand logotipi */
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.logoMedia {
+  color: #e8000d;
+}
+
+.logoPark {
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 6px 0;
+}
+
+.phone {
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 14px;
+  transition: color 0.15s ease;
+}
+
+.phone:hover {
+  color: #e8000d;
+}
+
+.workHours {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ddd;
+  margin: 0;
+}
+
+/* Sarlavhalar */
+.heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.linksHeading {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e8000d;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+/* To'lov kartalari gridi */
+.paymentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.paymentCard {
+  background: #252b3b;
+  border: 1px solid #2e3447;
+  border-radius: 10px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Linklar ro'yxati */
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkItem {
+  font-size: 13px;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.linkItem:hover {
+  color: #fff;
+}
+
+/* Pastki chiziq paneli */
+.bottomBar {
+  border-top: 1px solid #252b3b;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+.socialsGrid {
+  display: flex;
+  gap: 10px;
+}
+
+.socialCard {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #252b3b;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.socialCard:hover {
+  background: #2e3447;
+  color: #fff;
+}
+
+/* RESPONSIVE DESIGN (Ekran o'lchamlariga moslashuvchanlik) */
+
+/* Katta planshet va kichik noutbuklar uchun (Laptop/Tablet) */
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  /* Linklar ustunlarini yonma-yon qilish */
+  .linksColumn {
+    grid-column: span 1;
+  }
+}
+
+/* Kichik planshet va telefonlar uchun (Mobile Landscape/Portrait) */
+@media (max-width: 640px) {
+  .container {
+    padding: 30px 16px 16px;
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr; /* Hammasi bitta ustun bo'lib qoladi */
+    gap: 24px;
+  }
+
+  .paymentGrid {
+    grid-template-columns: repeat(3, 1fr); /* Mobil ekranda to'lovlarni 3 qator qilish qulay */
+  }
+
+  .bottomBar {
+    flex-direction: column; /* Mualliflik va ijtimoiy tarmoqlar tepma-tep tushadi */
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .heading, .linksHeading {
+    margin-bottom: 8px;
+  }
+}

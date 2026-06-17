@@ -1,0 +1,72 @@
+/* Butun sahifa foni va minimal balandligi */
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Mediapark kabi och kulrang/oqish fon */
+  overflow-x: hidden; /* Gorizontal skroll chiqib ketishining oldini oladi */
+}
+
+.mainContent {
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* To'liq ekran kengligidagi seksiyalar (Banner, AppPromo uchun) */
+.fullWidthSection {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Saytning markaziy konteyneri — barcha kontentni bir chiziqda ushlaydi */
+.container {
+  width: 100%;
+  max-width: 1440px; /* Mediapark standart monitor o'lchami */
+  margin: 0 auto;
+  padding: 0 24px; /* Kompyuterda chekkalardan qoladigan masofa */
+  box-sizing: border-box;
+}
+
+/* Seksiyalar (bloklar) orasidagi vertikal masofa */
+.sectionGap {
+  margin-bottom: 48px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Ekran o'lchamlariga moslashuvchanlik)
+   ========================================================================== */
+
+/* 1. Katta planshetlar va o'rtacha noutbuklar uchun (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px; /* Chekka masofani biroz kamaytiramiz */
+  }
+  
+  .sectionGap {
+    margin-bottom: 36px; /* Bloklar orasi biroz yaqinlashadi */
+  }
+}
+
+/* 2. Kichik planshetlar va yirik telefonlar uchun (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .fullWidthSection,
+  .sectionGap {
+    margin-bottom: 28px;
+  }
+}
+
+/* 3. Kichik mobil telefonlar uchun (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px; /* Telefonda maksimal ekran maydonidan foydalanish */
+  }
+
+  .fullWidthSection,
+  .sectionGap {
+    margin-bottom: 20px; /* Mobilbop ixcham masofa */
+  }
+}

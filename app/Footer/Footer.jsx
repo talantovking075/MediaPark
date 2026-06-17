@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import styles from "./Footer.module.css";
 
 const paymentMethods = [
   {
@@ -99,58 +102,46 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#1a1f2e", color: "#aaa", fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "40px 24px 24px" }}>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
 
-        {/* Main grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.4fr 1fr 1fr 1fr", gap: "40px", marginBottom: "40px" }}>
+        {/* Asosiy Grid qismi */}
+        <div className={styles.mainGrid}>
 
-          {/* Brand + Contact */}
-          <div>
-            <div style={{ fontSize: "20px", fontWeight: 900, fontStyle: "italic", letterSpacing: "-1px", marginBottom: "16px" }}>
-              <span style={{ color: "#e8000d" }}>MEDIA</span>
-              <span style={{ color: "#fff" }}>PARK</span>
+          {/* Brend va Kontakt bo'limi */}
+          <div className={styles.brandColumn}>
+            <div className={styles.logo}>
+              <span className={styles.logoMedia}>MEDIA</span>
+              <span className={styles.logoPark}>PARK</span>
             </div>
-            <p style={{ fontSize: "12px", color: "#888", marginBottom: "6px" }}>Возникли вопросы? Готовы помочь:</p>
-            <a href="tel:+998712033333" style={{ fontSize: "18px", fontWeight: 900, color: "#fff", textDecoration: "none", display: "block", marginBottom: "14px" }}>
+            <p className={styles.subtitle}>Возникли вопросы? Готовы помочь:</p>
+            <a href="tel:+998712033333" className={styles.phone}>
               +998 71 203 33 33
             </a>
-            <p style={{ fontSize: "12px", color: "#888", marginBottom: "4px" }}>График работы:</p>
-            <p style={{ fontSize: "13px", fontWeight: 700, color: "#ddd" }}>Ежедневно: 09:00 – 21:00</p>
+            <p className={styles.subtitle}>График работы:</p>
+            <p className={styles.workHours}>Ежедневно: 09:00 – 21:00</p>
           </div>
 
-          {/* Payment methods */}
-          <div>
-            <h3 style={{ fontSize: "13px", fontWeight: 700, color: "#fff", marginBottom: "14px", textTransform: "uppercase", letterSpacing: ".5px" }}>
-              Способы оплаты
-            </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+          {/* To'lov turlari bo'limi */}
+          <div className={styles.paymentColumn}>
+            <h3 className={styles.heading}>Способы оплаты</h3>
+            <div className={styles.paymentGrid}>
               {paymentMethods.map((m) => (
-                <div key={m.name} style={{
-                  background: "#252b3b",
-                  border: "1px solid #2e3447",
-                  borderRadius: "10px",
-                  height: "48px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}>
+                <div key={m.name} className={styles.paymentCard}>
                   {m.logo}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Link columns */}
+          {/* Havolalar (Linklar) ustunlari */}
           {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h3 style={{ fontSize: "13px", fontWeight: 700, color: "#e8000d", marginBottom: "14px", textTransform: "uppercase", letterSpacing: ".5px" }}>
-                {title}
-              </h3>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div key={title} className={styles.linksColumn}>
+              <h3 className={styles.linksHeading}>{title}</h3>
+              <ul className={styles.linksList}>
                 {links.map((link) => (
                   <li key={link}>
-                    <Link href="#" style={{ fontSize: "13px", color: "#888", textDecoration: "none" }}>
+                    <Link href="#" className={styles.linkItem}>
                       {link}
                     </Link>
                   </li>
@@ -160,23 +151,12 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
-        <div style={{
-          borderTop: "1px solid #252b3b",
-          paddingTop: "20px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}>
-          <p style={{ fontSize: "12px", color: "#555" }}>© 2026 Mediapark. Все права защищены.</p>
-          <div style={{ display: "flex", gap: "10px" }}>
+        {/* Pastki chiziq va Mualliflik huquqi bo'limi */}
+        <div className={styles.bottomBar}>
+          <p className={styles.copyright}>© 2026 Mediapark. Все права защищены.</p>
+          <div className={styles.socialsGrid}>
             {socials.map((s) => (
-              <Link key={s.name} href="#" style={{
-                width: "34px", height: "34px", borderRadius: "8px",
-                background: "#252b3b", color: "#888",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                textDecoration: "none", transition: "background .15s",
-              }}>
+              <Link key={s.name} href="#" className={styles.socialCard} aria-label={s.name}>
                 {s.icon}
               </Link>
             ))}

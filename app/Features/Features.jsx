@@ -1,3 +1,4 @@
+import React from 'react';
 
 const features = [
   {
@@ -103,25 +104,49 @@ const features = [
 
 export default function Features() {
   return (
-    <section style={{ padding: "24px 16px 32px", background: "#f7f7f7" }}>
-      <h2 style={{ fontSize: "18px", fontWeight: "700", color: "#111", marginBottom: "20px" }}>
+    <section style={{ padding: "32px 16px", background: "#f7f7f7" }}>
+      
+      {/* Inline media-queries'larni boshqarish uchun JSX ichidagi kichik stil */}
+      <style>{`
+        .mp-features-grid {
+          display: grid;
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          gap: 12px;
+        }
+        @media (max-width: 1200px) {
+          .mp-features-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+        }
+        @media (max-width: 902px) {
+          .mp-features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+        }
+        @media (max-width: 640px) {
+          .mp-features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 8px !important; }
+          .mp-features-title { font-size: 16px !important; margin-bottom: 14px !important; }
+        }
+        @media (max-width: 420px) {
+          .mp-features-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+
+      <h2 className="mp-features-title" style={{ fontSize: "20px", fontWeight: "700", color: "#111", marginBottom: "20px" }}>
         Почему именно Mediapark?
       </h2>
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(6, minmax(0, 1fr))",
-        gap: "10px",
-      }}>
+
+      {/* Grid Konteyner */}
+      <div className="mp-features-grid">
         {features.map((f) => (
           <div key={f.title} style={{
             background: "#fff",
             border: "1px solid #ebebeb",
             borderRadius: "12px",
-            padding: "14px",
+            padding: "16px",
             display: "flex",
             flexDirection: "column",
             gap: "0",
+            transition: "transform 0.2s ease, box-shadow 0.2s ease",
+            cursor: "pointer"
           }}>
+            {/* Ikonka atrofidagi aylana quti */}
             <div style={{
               width: "40px",
               height: "40px",
@@ -131,13 +156,29 @@ export default function Features() {
               alignItems: "center",
               justifyContent: "center",
               marginBottom: "12px",
+              flexShrink: 0
             }}>
               {f.icon}
             </div>
-            <p style={{ fontSize: "12px", fontWeight: "700", color: "#111", marginBottom: "6px", lineHeight: "1.4" }}>
+
+            {/* Karta Sarlavhasi */}
+            <p style={{ 
+              fontSize: "13px", 
+              fontWeight: "700", 
+              color: "#111", 
+              marginBottom: "6px", 
+              lineHeight: "1.4" 
+            }}>
               {f.title}
             </p>
-            <p style={{ fontSize: "11px", color: "#666", lineHeight: "1.5", margin: 0 }}>
+
+            {/* Karta Matni */}
+            <p style={{ 
+              fontSize: "11.5px", 
+              color: "#666", 
+              lineHeight: "1.5", 
+              margin: 0 
+            }}>
               {f.desc}
             </p>
           </div>
