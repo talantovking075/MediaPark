@@ -1,0 +1,134 @@
+.card {
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  min-height: 22px;
+  margin-bottom: 6px;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.imgWrap {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.emoji {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.name {
+  font-size: 12px;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.monthly {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #f2f2f2;
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.monthlyLabel {
+  font-size: 11px;
+  color: #888;
+}
+
+.monthlyVal {
+  font-size: 11px;
+  color: #333;
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 6px;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.oldRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.oldPrice {
+  font-size: 11px;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 10px;
+  background: #fde8e8;
+  color: #c0392b;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111;
+}
+
+.cartBtn {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: #e8000d;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cartBtn:hover {
+  background: #c5000b;
+}

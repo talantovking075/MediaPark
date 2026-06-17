@@ -1,0 +1,387 @@
+/* =============================
+   NAVBAR — Mediapark.uz 1:1
+   ============================= */
+
+/* ---------- TOP BAR ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 1px 0 #e5e7eb, 0 2px 8px rgba(0,0,0,.05);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.topBar {
+  display: none; /* rasmda ko'rinmayapti, saqlab qo'yamiz */
+}
+
+/* ---------- MAIN NAV ---------- */
+.mainNav {
+  padding: 0 24px;
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 68px;
+}
+
+/* ---------- LOGO ---------- */
+.logo {
+  display: flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logoText {
+  font-size: 1.625rem;
+  font-weight: 900;
+  color: #e8162b;
+  letter-spacing: -0.5px;
+}
+
+.logoPark {
+  font-size: 1.625rem;
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+/* ---------- CATALOG BUTTON ---------- */
+.catalogBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #e8162b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  height: 44px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 150ms;
+  font-family: inherit;
+}
+
+.catalogBtn:hover {
+  background: #c5101f;
+}
+
+/* Burger icon (3 lines) */
+.burgerIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 18px;
+}
+
+.burgerIcon span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ---------- SEARCH BOX ---------- */
+.searchBox {
+  flex: 1;
+  display: flex;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 150ms;
+}
+
+.searchBox:focus-within {
+  border-color: #e8162b;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0 16px;
+  height: 44px;
+  font-size: 0.9375rem;
+  border: none;
+  outline: none;
+  color: #111827;
+  background: transparent;
+  font-family: inherit;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.searchBtn {
+  width: 52px;
+  height: 44px;
+  background: #e8162b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 150ms;
+  flex-shrink: 0;
+}
+
+.searchBtn:hover {
+  background: #c5101f;
+}
+
+/* ---------- ACTION ICONS (Статус заказа, Сравнить...) ---------- */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.actionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: color 150ms, background 150ms;
+  position: relative;
+  white-space: nowrap;
+  min-width: 58px;
+}
+
+.actionItem:hover {
+  color: #e8162b;
+  background: #fff5f5;
+}
+
+.actionItem svg {
+  color: #374151;
+  transition: color 150ms;
+  flex-shrink: 0;
+}
+
+.actionItem:hover svg {
+  color: #e8162b;
+}
+
+/* Cart badge */
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  background: #e8162b;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ---------- MOBILE BURGER (hidden on desktop) ---------- */
+.mobileBurger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.mobileBurger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #374151;
+  border-radius: 2px;
+}
+
+/* ---------- CATEGORY STRIP ---------- */
+.categoryStrip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 24px;
+  height: 44px;
+  border-top: 1px solid #f3f4f6;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.categoryStrip::-webkit-scrollbar {
+  display: none;
+}
+
+/* "Акции" — green pill */
+.catSale {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 150ms;
+}
+.catSale:hover { background: #16a34a; }
+
+/* "Dyson", "Apple" etc — outlined pill */
+.catBrand {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid #e5e7eb;
+  color: #374151;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 3px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: border-color 150ms, color 150ms;
+}
+.catBrand:hover {
+  border-color: #e8162b;
+  color: #e8162b;
+}
+
+/* Regular category links */
+.catLink {
+  color: #374151;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 4px 2px;
+  transition: color 150ms;
+}
+.catLink:hover { color: #e8162b; }
+
+/* ---------- CATALOG DROPDOWN ---------- */
+.catalogDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  padding: 16px 24px;
+}
+
+.catalogList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.catalogItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111827;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 150ms, color 150ms;
+}
+.catalogItem:hover {
+  background: #fff5f5;
+  color: #e8162b;
+}
+
+.catIcon {
+  font-size: 1.25rem;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.catalogOverlay {
+  position: fixed;
+  inset: 0;
+  top: 100%;
+  z-index: -1;
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobileMenu {
+  display: none;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mobileMenuInner {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobileMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 8px;
+  text-decoration: none;
+  color: #111827;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+  transition: background 150ms;
+}
+.mobileMenuItem:hover { background: #f3f4f6; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .actions .actionItem span {
+    display: none;
+  }
+  .actionItem {
+    min-width: auto;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogBtn span:last-child { display: none; }
+  .catalogBtn { padding: 0 14px; }
+  .actions { display: none; }
+  .mobileBurger { display: flex; }
+  .mobileMenu { display: block; }
+  .categoryStrip { display: none; }
+  .navInner { gap: 10px; }
+  .mainNav { padding: 0 16px; }
+}

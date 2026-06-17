@@ -1,0 +1,26 @@
+.mp-cat-btn {
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+  
+  /* Fon rangini aniq va ustun qilish uchun !important qo'shildi */
+  background: #e8000d !important; 
+  
+  /* Matn rangi tozalangan 6 talik hex formatiga keltirildi */
+  color: #fdfdfd; 
+  
+  border-radius: 10px; 
+  padding: 0 22px; 
+  height: 46px;
+  font-size: 1rem; 
+  font-weight: 700; 
+  flex-shrink: 0;
+  border: none; /* Agar chetidagi chiziq xalaqit berayotgan bo'lsa */
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+/* Hover bo'lgandagi holati (Mediapark'ning to'qroq qizili) */
+.mp-cat-btn:hover {
+  background: #c5000b !important;
+}
